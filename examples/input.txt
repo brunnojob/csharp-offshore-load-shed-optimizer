@@ -1,0 +1,4 @@
+HVAC-A,45,2,0
+workshop,40,3,0
+watermaker,60,6,0
+fire-pump,120,0,1

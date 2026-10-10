@@ -1,0 +1,1 @@
+CSV: load,kW,interruption-cost,protected-flag. CLI deficit is 80 kW; the library method accepts a configured deficit. Maximum 24 loads; steady-state capacity only, excluding transient stability and switching constraints.
