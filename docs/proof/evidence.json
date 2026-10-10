@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "repository": "brunnojob/csharp-offshore-load-shed-optimizer",
+  "source_commit": "1981e6091489eaba80b160835809e67fef75c623",
+  "generated_at": "2026-10-10T02:37:06.492149+00:00",
+  "run_url": "https://github.com/brunnojob/csharp-offshore-load-shed-optimizer/actions/runs/38017614436",
+  "inputs_sha256": {
+    ".proof/scenarios.json": "4002cbc9428cc09df6ddb6ee208d781d064ec18cc81a6cf60a370169c048d317",
+    "examples/input.txt": "f2dd27791e35bb971f869499ab11bcd2c0eb0750155b7424403b5580f8661842"
+  },
+  "cases": [
+    {
+      "display": false,
+      "name": "dotnet build && dotnet run --no-build -- --self-test && dotnet run --no-build < examples/input.txt",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "dotnet build && dotnet run --no-build -- --self-test && dotnet run --no-build < examples/input.txt"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 10.431,
+      "output": "  Determining projects to restore...\n  Restored /home/runner/work/csharp-offshore-load-shed-optimizer/csharp-offshore-load-shed-optimizer/Offshore.csproj (in 82 ms).\n  Offshore -> /home/runner/work/csharp-offshore-load-shed-optimizer/csharp-offshore-load-shed-optimizer/bin/Debug/net8.0/Offshore.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:05.66\nTests passed\n{\"Shed\":[\"HVAC-A\",\"workshop\"],\"ReleasedKw\":85,\"Cost\":5}\n",
+      "output_sha256": "04e570209cafbc678b847292dd87ac357160750b8f25c900dffb2ecf32662bcd"
+    },
+    {
+      "display": true,
+      "name": "Application demonstration with checked output",
+      "argv": [
+        "dotnet",
+        "run",
+        "--no-build",
+        "--"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.803,
+      "output": "{\"Shed\":[\"HVAC-A\",\"workshop\"],\"ReleasedKw\":85,\"Cost\":5}\n",
+      "output_sha256": "5d565de077b86f359864292293edb79cfc9f653c66a6ce9c996fa03e04772fc6"
+    },
+    {
+      "display": true,
+      "name": "Reject an empty capture",
+      "argv": [
+        "dotnet",
+        "run",
+        "--no-build",
+        "--"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.853,
+      "output": "Missing input\n",
+      "output_sha256": "59dde097c155045b6510b44b5d0ee86176974b3476c8b96718ac676f66134e97"
+    },
+    {
+      "display": true,
+      "name": "Reject malformed input",
+      "argv": [
+        "dotnet",
+        "run",
+        "--no-build",
+        "--"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.753,
+      "output": "Invalid CSV row\n",
+      "output_sha256": "64aaf8a3f81772044320e6481a9fe33ac80bfdb41f6deb590512cd62c2cd30b7"
+    },
+    {
+      "display": true,
+      "name": "Reject unsupported invocation",
+      "argv": [
+        "dotnet",
+        "run",
+        "--no-build",
+        "--",
+        "--unsupported"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.753,
+      "output": "Unsupported command arguments\n",
+      "output_sha256": "a7217611e9bf4e2fd5cbbd1b8b97c5898f154b14da948e9e35008b59b8158bcd"
+    },
+    {
+      "display": true,
+      "name": "Reject an oversized input record",
+      "argv": [
+        "dotnet",
+        "run",
+        "--no-build",
+        "--"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.753,
+      "output": "Input record too large\n",
+      "output_sha256": "45eb187fdae97f09b79c4bcd5c03d9b942872125e5fb5b6a83011b36f8d62333"
+    }
+  ],
+  "passed": true
+}

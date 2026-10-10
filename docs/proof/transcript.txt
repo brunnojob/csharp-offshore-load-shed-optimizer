@@ -1,0 +1,27 @@
+$ bash -e -o pipefail -c dotnet build && dotnet run --no-build -- --self-test && dotnet run --no-build < examples/input.txt
+  Determining projects to restore...
+  Restored /home/runner/work/csharp-offshore-load-shed-optimizer/csharp-offshore-load-shed-optimizer/Offshore.csproj (in 82 ms).
+  Offshore -> /home/runner/work/csharp-offshore-load-shed-optimizer/csharp-offshore-load-shed-optimizer/bin/Debug/net8.0/Offshore.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.66
+Tests passed
+{"Shed":["HVAC-A","workshop"],"ReleasedKw":85,"Cost":5}
+
+$ dotnet run --no-build --
+{"Shed":["HVAC-A","workshop"],"ReleasedKw":85,"Cost":5}
+
+$ dotnet run --no-build --
+Missing input
+
+$ dotnet run --no-build --
+Invalid CSV row
+
+$ dotnet run --no-build -- --unsupported
+Unsupported command arguments
+
+$ dotnet run --no-build --
+Input record too large
