@@ -1,5 +1,7 @@
 # csharp-offshore-load-shed-optimizer
 
+[View execution evidence](https://brunnojob.github.io/devstart-lab/proofs/csharp-offshore-load-shed-optimizer/)
+
 Select nonessential loads to shed with an exact capacity-constrained search while preserving protected consumers.
 
 ```sh
